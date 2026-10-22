@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <unistd.h> // universal standard
+#include <fcntl.h>  /// file control
+
+int main()
+{
+    int fd = 0; /// file descriptor
+    fd = creat("Demo.txt", 0777);
+    if (fd == -1)
+    {
+        printf("Unable to create the file\n");
+        return -1;
+    }
+    else
+    {
+        printf("File gets created with fd: %d\n",fd);
+    }
+    return 0;
+}
